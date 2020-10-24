@@ -33,7 +33,7 @@ jobs:
           opam init
           eval `opam env`
           opam switch create 4.11.1
-          eval `opam env
+          eval `opam env`
 
       - name: Install Owl dependencies
         working-directory: ./code
