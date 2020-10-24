@@ -39,4 +39,5 @@ jobs:
         working-directory: ./code
         run: |
           opam install dune
+          dune external-lib-deps --missing @install @runtest
           make
