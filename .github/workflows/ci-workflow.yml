@@ -21,4 +21,5 @@ jobs:
         working-directory: ./code
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y m4 wget unzip aspcud libshp-dev libplplot-dev gfortran pkg-config git
+          sudo apt-get install -y m4 wget unzip aspcud libshp-dev libplplot-dev gfortran pkg-config git ocaml
+          make
