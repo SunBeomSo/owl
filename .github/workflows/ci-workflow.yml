@@ -17,12 +17,20 @@ jobs:
         with:
           path: code
 
-      - name: Install dependencies
+      - name: Install Ubuntu dependencies
         working-directory: ./code
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y m4 wget unzip aspcud libshp-dev libplplot-dev gfortran pkg-config git ocaml
-          add-apt-repository ppa:avsm/ppa && apt update && apt install opam
+          sudo apt-get install -y m4 wget unzip aspcud libshp-dev libplplot-dev gfortran pkg-config git
+
+
+      - name: Install OCaml and OPAM
+        working-directory: ./code
+        run: |
+          sudo apt-get install -y ocaml
+          sudo add-apt-repository ppa:avsm/ppa
+          sudo apt-get update -y
+          sudo apt-get install opam
           opam init
           eval `opam env`
           opam switch create 4.11.1
