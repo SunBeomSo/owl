@@ -31,13 +31,14 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install opam
           opam init
-          eval `opam env`
+          eval $(opam env)
           opam switch create 4.11.1
-          eval `opam env`
+          eval $(opam env)
 
       - name: Install Owl dependencies
         working-directory: ./code
         run: |
           opam install dune
+          eval $(opam env)
           dune external-lib-deps --missing @install @runtest
           make
