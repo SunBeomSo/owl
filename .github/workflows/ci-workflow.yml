@@ -38,7 +38,7 @@ jobs:
       - name: Install Owl dependencies
         working-directory: ./code
         run: |
-          opam install alcotest ctypes dune eigen npy ocaml-compiler-libs plplot stdio
+          opam install --yes alcotest ctypes dune eigen npy ocaml-compiler-libs plplot stdio
           eval $(opam env)
           dune external-lib-deps --missing @install @runtest
           make
